@@ -9,6 +9,12 @@ var path = require('path');
 
 module.exports = function(app) {
 
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, Authorization, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
