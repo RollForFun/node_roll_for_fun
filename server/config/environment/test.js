@@ -8,10 +8,9 @@ module.exports = {
     uri: 'mongodb://localhost/rollforfun-test'
   },
   sequelize: {
-    uri: 'sqlite://',
+    uri: 'mysql://root:@localhost:3306/rollforfun-test?reconnect=true',
     options: {
       logging: false,
-      storage: 'test.sqlite',
       define: {
         timestamps: false
       }

@@ -20,5 +20,14 @@ module.exports = {
             process.env.OPENSHIFT_MONGODB_DB_URL +
             process.env.OPENSHIFT_APP_NAME ||
             'mongodb://localhost/rollforfun'
+  },
+  sequelize: {
+    uri: process.env.CLEARDB_DATABASE_URL || 'mysql://root:@localhost:3306/rollforfun-dev?reconnect=true',
+    options: {
+      logging: false,
+      define: {
+        timestamps: false
+      }
+    }
   }
 };
